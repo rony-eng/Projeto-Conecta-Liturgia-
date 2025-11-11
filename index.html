@@ -13,9 +13,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         
         /* Cor de fundo principal alterada para o bege claro (#B88A62, que era a cor-secundária) */
+        /* ALTERAÇÃO: Removendo o background-color do body, pois o main-card cobrirá tudo */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #B88A62; 
+            background-color: #fcfcfc; /* Fundo do card se torna o fundo da página */
         }
         
         /* Definindo a paleta de cores do PDF como variáveis CSS */
@@ -40,10 +41,11 @@
             color: #000000;
         }
 
-        /* Estilização para o container principal, imitando o layout de cartão do exemplo (PAGE 1) */
+        /* Estilização para o container principal */
+        /* ALTERAÇÃO: Removendo o background-color daqui, pois foi para o body */
         .main-card {
-            background-color: #fcfcfc; /* Fundo do card mais claro */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+             /* background-color: #fcfcfc; */ /* Fundo do card mais claro */
+             /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */ /* Sombra removida */
         }
         
         /* Fundo da seção Hero alterado para cor sólida (cor primária) e sem imagem */
@@ -58,13 +60,17 @@
         }
     </style>
 </head>
-<body class="bg-secondary min-h-screen flex items-start justify-center p-4 sm:p-8">
+<!-- ALTERAÇÃO: Removendo classes de centralização, padding e fundo (bg-secondary) do body -->
+<body class="min-h-screen">
 
     <!-- Container do Cartão Principal -->
-    <div class="main-card w-full max-w-6xl rounded-xl overflow-hidden shadow-2xl">
+    <!-- ALTERAÇÃO: Adicionando min-h-screen, flex e flex-col -->
+    <div class="main-card w-full min-h-screen flex flex-col">
         
         <!-- Navbar (Menu Superior - PAGE 3) -->
-        <header class="flex justify-between items-center p-4 sm:p-6 border-b border-quaternary bg-white">
+        <!-- ALTERAÇÃO: Adicionando padding horizontal (px-4 sm:px-8) que estava no body -->
+        <!-- Esta seção (header) não precisa de 'flex-shrink: 0' pois é o comportamento padrão -->
+        <header class="flex justify-between items-center p-4 sm:p-6 px-4 sm:px-8 border-b border-quaternary bg-white">
             <!-- Logo PCL -->
             <div class="flex flex-col">
                 <div class="logo-text text-3xl sm:text-4xl text-[#1a1a1a] tracking-tighter">PCL</div>
@@ -93,7 +99,8 @@
 
         <!-- Seção Hero (Tela Inicial - PAGE 4) -->
         <!-- A classe 'hero-section' agora aplica o Marrom Escuro para o fundo -->
-        <section class="hero-section text-white min-h-[500px] flex items-center justify-start p-6 sm:p-16 rounded-b-xl">
+        <!-- ALTERAÇÃO: Removendo min-h-[500px] e adicionando flex-1 (que significa flex-grow: 1) -->
+        <section class="hero-section text-white flex items-center justify-start p-6 sm:p-16 px-4 sm:px-8 flex-1">
             <div class="max-w-xl space-y-8">
                 <!-- Título Grande "PROJETO CONECTA LITURGIA" -->
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
