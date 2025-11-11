@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Projeto Conecta Liturgia</title>
+    <!-- Incluindo Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluindo a biblioteca de ícones Lucide para a lupa -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Definindo a fonte Inter como preferencial */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Cor de fundo principal alterada para o bege claro (#B88A62, que era a cor-secundária) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #B88A62; 
+        }
+        
+        /* Definindo a paleta de cores do PDF como variáveis CSS */
+        .color-primary { color: #714329; } /* Marrom Escuro */
+        .bg-primary { background-color: #714329; }
+        .color-secondary { color: #B88A62; } /* Marrom Médio */
+        .bg-secondary { background-color: #B88A62; }
+        .color-tertiary { color: #D8C2B3; } /* Bege Claro */
+        .bg-tertiary { background-color: #D8C2B3; }
+        .color-quaternary { color: #E6DED8; } /* Quase Branco */
+        .bg-quaternary { background-color: #E6DED8; }
+        .color-quinary { color: #B2A79C; } /* Cinza Bege */
+        .bg-quinary { background-color: #B2A79C; }
+
+        /* Estilo para simular o efeito da logo PCL com um container de altura fixa */
+        .logo-text {
+            /* Tentativa de imitar a fonte serifada e grande da imagem da logo (PAGE 2) */
+            font-family: 'Times New Roman', serif; 
+            font-weight: 900;
+            line-height: 0.8;
+            /* Cor da logo alterada para preto */
+            color: #000000;
+        }
+
+        /* Estilização para o container principal, imitando o layout de cartão do exemplo (PAGE 1) */
+        .main-card {
+            background-color: #fcfcfc; /* Fundo do card mais claro */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Fundo da seção Hero alterado para cor sólida (cor primária) e sem imagem */
+        .hero-section {
+            background-color: #714329; /* Usando o Marrom Escuro (#714329) para contraste */
+            background-size: cover;
+            background-position: center;
+        }
+        /* Ajuste de cor do texto no hero para ser legível no novo fundo (#714329) */
+        .hero-section h1, .hero-section p {
+             color: white; /* Mantendo o texto branco */
+        }
+    </style>
+</head>
+<body class="bg-secondary min-h-screen flex items-start justify-center p-4 sm:p-8">
+
+    <!-- Container do Cartão Principal -->
+    <div class="main-card w-full max-w-6xl rounded-xl overflow-hidden shadow-2xl">
+        
+        <!-- Navbar (Menu Superior - PAGE 3) -->
+        <header class="flex justify-between items-center p-4 sm:p-6 border-b border-quaternary bg-white">
+            <!-- Logo PCL -->
+            <div class="flex flex-col">
+                <div class="logo-text text-3xl sm:text-4xl text-[#1a1a1a] tracking-tighter">PCL</div>
+                <!-- REMOÇÃO: Removendo o texto "CONECTA LITURGIA" (div abaixo) -->
+                <!-- <div class="text-xs tracking-widest font-medium text-black">CONECTA LITURGIA</div> -->
+            </div>
+
+            <!-- Menu de Navegação -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wider">
+                <!-- ALTERAÇÃO: Removendo a classe 'text-gray-900' e 'font-bold' implícita do HOME, usando 'text-gray-500' para igualar as demais opções. -->
+                <a href="#" class="text-gray-500 hover:color-primary transition duration-150">HOME</a>
+                <a href="#" class="text-gray-500 hover:color-primary transition duration-150">SERVIÇOS</a>
+                <a href="#" class="text-gray-500 hover:color-primary transition duration-150">SOBRE</a>
+                <a href="#" class="text-gray-500 hover:color-primary transition duration-150">CADASTRO</a>
+                <!-- Ícone de Pesquisa (Lupa) -->
+                <button class="text-gray-500 hover:color-primary transition duration-150">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+            </nav>
+
+            <!-- Menu responsivo (hambúrguer) para mobile -->
+            <button class="md:hidden text-gray-900">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </header>
+
+        <!-- Seção Hero (Tela Inicial - PAGE 4) -->
+        <!-- A classe 'hero-section' agora aplica o Marrom Escuro para o fundo -->
+        <section class="hero-section text-white min-h-[500px] flex items-center justify-start p-6 sm:p-16 rounded-b-xl">
+            <div class="max-w-xl space-y-8">
+                <!-- Título Grande "PROJETO CONECTA LITURGIA" -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                    PROJETO CONECTA LITURGIA
+                </h1>
+                
+                <!-- Texto Explicativo (Baseado no Objetivo Principal do PDF) -->
+                <p class="text-base sm:text-lg font-light text-quaternary">
+                    Um site voltado para ajudar comunidades católicas em geral que precisam de pessoas para servir. 
+                    Encontre serviços (missas, celebrações, adorações) que necessitam de cantores, leitores e músicos 
+                    ou disponibilize seu serviço à comunidade.
+                </p>
+
+                <!-- Botões de Ação ("Login" e "Inscrever-se") -->
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                    <!-- Botão 1: Login (Fundo com Cor Secundária - #B88A62) -->
+                    <a href="#" class="bg-secondary hover:bg-[#a67c52] transition duration-300 text-white font-bold py-3 px-8 rounded-full shadow-lg text-center" 
+                       onclick="console.log('Botão Login apertado. Redirecionar para página de login posteriormente.'); return false;">
+                        FAZER LOGIN
+                    </a>
+                    
+                    <!-- Botão 2: Inscrever-se (Borda com Cor Primária - #714329) -->
+                    <a href="#" class="bg-transparent border-2 border-quaternary hover:bg-quaternary transition duration-300 text-quaternary hover:text-primary font-bold py-3 px-8 rounded-full text-center"
+                       onclick="console.log('Botão Inscrever-se apertado. Redirecionar para página de inscrição posteriormente.'); return false;">
+                        INSCREVER-SE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Script para inicializar os ícones Lucide (Lupa e Menu) -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
