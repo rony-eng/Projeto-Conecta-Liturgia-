@@ -68,14 +68,15 @@
     <div class="main-card w-full min-h-screen flex flex-col">
         
         <!-- Navbar (Menu Superior - PAGE 3) -->
-        <!-- ALTERAÇÃO: Adicionando padding horizontal (px-4 sm:px-8) que estava no body -->
-        <!-- Esta seção (header) não precisa de 'flex-shrink: 0' pois é o comportamento padrão -->
-        <header class="flex justify-between items-center p-4 sm:p-6 px-4 sm:px-8 border-b border-quaternary bg-white">
-            <!-- Logo PCL -->
-            <div class="flex flex-col">
-                <div class="logo-text text-3xl sm:text-4xl text-[#1a1a1a] tracking-tighter">PCL</div>
-                <!-- REMOÇÃO: Removendo o texto "CONECTA LITURGIA" (div abaixo) -->
-                <!-- <div class="text-xs tracking-widest font-medium text-black">CONECTA LITURGIA</div> -->
+        <!-- ALTERAÇÃO: Removendo padding-x (px-4 sm:px-8) e justify-between/items-center do header. -->
+        <!-- O header agora é apenas um container de fundo branco, borda e padding vertical/horizontal base. -->
+        <header class="p-4 sm:p-6 border-b border-quaternary bg-white">
+            <!-- ALTERAÇÃO: Adicionando um container interno com max-w-xl e mx-auto para centralizar -->
+            <!-- e alinhar com o conteúdo da hero section. -->
+            <div class="flex justify-between items-center w-full max-w-xl mx-auto">
+                <!-- Logo PCL -->
+                <div class="flex flex-col">
+                    <div class="logo-text text-3xl sm:text-4xl text-[#1a1a1a] tracking-tighter">PCL</div>
             </div>
 
             <!-- Menu de Navegação -->
@@ -95,12 +96,15 @@
             <button class="md:hidden text-gray-900">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
+            <!-- ALTERAÇÃO: Fechando o novo div container centralizado -->
+            </div>
         </header>
 
         <!-- Seção Hero (Tela Inicial - PAGE 4) -->
         <!-- A classe 'hero-section' agora aplica o Marrom Escuro para o fundo -->
-        <!-- ALTERAÇÃO: Trocando 'justify-start' para 'justify-center' para centralizar o bloco de conteúdo -->
-        <section class="hero-section text-white flex items-center justify-center p-6 sm:p-16 px-4 sm:px-8 flex-1">
+        <!-- ALTERAÇÃO: Removendo padding-x (px-4 sm:px-8) pois o container interno (max-w-xl) -->
+        <!-- já controla a largura e o padding (p-6 sm:p-16) cuida do espaçamento. -->
+        <section class="hero-section text-white flex items-center justify-center p-6 sm:p-16 flex-1">
             <div class="max-w-xl space-y-8">
                 <!-- Título Grande "PROJETO CONECTA LITURGIA" -->
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
