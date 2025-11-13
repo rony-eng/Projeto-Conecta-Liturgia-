@@ -33,81 +33,72 @@
             min-height: 100vh;
         }
 
-        /* --- Estilo do Cabeçalho e Menu (Baseado nas Páginas 2 e 3 do PDF) --- */
+        /* --- Estilo do Cabeçalho e Menu (Lado a Lado e CENTRALIZADO) --- */
         header {
             display: flex;
-            justify-content: space-between;
+            /* Centraliza horizontalmente o logo e o menu como um grupo */
+            justify-content: center; 
             align-items: center;
             padding: 20px 50px;
             background-color: var(--color-white); 
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-            /* Responsividade básica para telas menores */
-            flex-wrap: wrap;
+            width: 100%;
+            /* Ajuste o padding para não ser muito grande em telas pequenas */
+            min-height: 60px;
         }
 
-        /* Estilo do Logo (PCL) - Similar ao exemplo DCL na Pág. 2 */
+        /* Estilo do Logo (PCL) */
         .logo {
             font-family: 'Playfair Display', serif; 
-            font-size: 28px;
+            font-size: 32px; 
             color: var(--color-dark-brown);
             text-decoration: none;
             line-height: 1;
             font-weight: 700;
+            /* Adiciona espaço à direita para separar do menu */
+            margin-right: 40px; 
+            flex-shrink: 0; /* Impede que o logo diminua */
         }
 
-        .logo-subtitle {
-            display: block;
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: -5px;
-            color: var(--color-text);
+        nav {
+            /* Garante que o menu não ocupe 100% da largura, mas apenas o necessário */
+            width: auto; 
         }
 
         nav ul {
             display: flex;
             list-style: none;
             align-items: center;
-            /* Responsividade: Garante que o menu quebre a linha se necessário */
+            justify-content: flex-start; 
             flex-wrap: wrap;
-            justify-content: flex-end;
         }
 
         nav ul li {
-            margin-left: 35px;
+            margin: 0 12px; /* Ajusta o espaçamento lateral entre os itens do menu */
         }
         
-        /* Ajuste para mobile */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-            nav ul li {
-                margin-left: 20px;
-            }
-            .logo {
-                font-size: 24px;
-            }
-        }
-        @media (max-width: 550px) {
+        /* Ajuste para mobile: Stacked layout for small screens */
+        @media (max-width: 650px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                padding: 15px 20px;
+            }
+            .logo {
+                font-size: 28px;
+                margin-right: 0; /* Remove a margem lateral */
+                margin-bottom: 15px; /* Adiciona espaço abaixo do logo */
             }
             nav {
-                margin-top: 15px;
                 width: 100%;
             }
             nav ul {
-                justify-content: space-between;
-                width: 100%;
+                justify-content: space-around; /* Distribui os itens uniformemente */
+                padding: 0;
             }
             nav ul li {
                 margin: 0;
             }
         }
-
 
         nav ul li a {
             text-decoration: none;
@@ -138,7 +129,7 @@
 
         /* Ícone de Pesquisa (Lupa) */
         .search-icon {
-            margin-left: 35px;
+            margin-left: 12px; /* Ajuste o espaçamento com o último item do menu */
             color: var(--color-text);
             font-size: 16px;
             cursor: pointer;
@@ -272,7 +263,6 @@
     <header>
         <a href="index.html" class="logo">
             PCL
-            <span class="logo-subtitle"></span>
         </a>
         <nav>
             <ul>
@@ -314,7 +304,7 @@
             </form>
 
             <p class="login-link">
-                Já tem um perfil? <a href="#">Acessar Login</a>
+                Já tem um perfil? <a href="login.html">Acessar Login</a>
             </p>
         </div>
     </main>
