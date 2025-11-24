@@ -18,3 +18,17 @@
             console.log('Email:', email);
             console.log('Password:', password);
         }
+
+        function acessar(){
+            var usuario = document.getElementById('email').value;
+            var senha = document.getElementById('password').value;
+
+            if(usuario == "rony" && senha == "1302"){
+                alert('Acesso Aprovado');
+                location.href = '/index.html'
+            }else{
+                alert('Acesso negado')
+            }
+
+
+        }
