@@ -6,12 +6,14 @@
     <title>Sobre - Projeto Conecta Liturgia</title>
     <!-- Carrega Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    <link href="/arq_sobre/sobre.css">
+   <!--<script src="/arq_sobre/sobre.js"></script>-->
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
         
-        /* Paleta de Cores baseada na referência e PDF */
-        :root {
+/* Paleta de Cores baseada na referência e PDF */
+:root {
             --color-primary-dark: #714329; /* Marrom Principal (do PDF) */
             --color-primary-light: #9C775D; /* Tom Terracota/Marrom do CTA do site */
             --color-background: #F9F8F6; /* Fundo Bege/Off-White muito sutil, mais próximo da referência */
@@ -20,7 +22,7 @@
             --color-text-light: #52473D; /* Texto Secundário */
         }
 
-        body {
+body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-background); /* Fundo claro ajustado */
             color: var(--color-text-dark);
@@ -29,13 +31,13 @@
             flex-direction: column;
         }
         
-        /* Centralização e Layout do Conteúdo */
-        main {
+/* Centralização e Layout do Conteúdo */
+main {
             display: flex;
             justify-content: center;
             align-items: flex-start; /* Alinha no topo */
             flex-grow: 1;
-        }
+     }
 
         .header-bg {
             background-color: var(--color-surface); 
@@ -121,8 +123,7 @@
         .card-title {
              color: var(--color-primary-dark);
         }
-
-    </style>
+   </style>
 </head>
 <body class="antialiased">
 
@@ -247,28 +248,5 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            // Toggle Mobile Menu
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Simular o comportamento de links (apenas para a navegação)
-            const navLinks = document.querySelectorAll('a[href]');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href').endsWith('.html')) {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        // Simulação de navegação.
-                        console.log(`Navegando para: ${link.getAttribute('href')}`);
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
